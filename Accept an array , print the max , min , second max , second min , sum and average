@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<limits.h>
+#define N 10
+int main(){
+    int arr[N];
+    int i;
+    int max = INT_MIN, min = INT_MAX, smax, smin, sum = 0;
+    float avg;
+    printf("Enter the number -> \n");
+    for(i=0; i<N; i++){
+        scanf("%d",&arr[i]);
+        if(arr[i] > max){
+            smax = max;
+            max = arr[i];
+           
+        } else if (arr[i] > smax){
+            smax = arr[i];
+        }
+       
+        if(arr[i] < min){
+            smin = min;
+            min = arr[i];
+            
+        } else if(arr[i] < smin){
+              smin = arr[i];
+        }
+        sum = sum + arr[i];
+    }
+    avg = (float)sum / N;
+    printf("\nThe array is -> ");
+    for(i=0; i<N; i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\nMAX = %d and Second max = %d",max,smax);
+    printf("\nMIN = %d and Second min = %d",min,smin);
+    printf("\nSum of array is -> %d",sum);
+    printf("\nAverage of array is -> %f",avg);
+}
