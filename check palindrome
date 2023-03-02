@@ -1,0 +1,56 @@
+package dsaOne;
+import java.util.Scanner;
+public class Palindrome {
+	static void palindrome(int n) {
+		
+		if (n > 0) {
+			int rev = 0, rem;
+			int temp = n;
+		
+			while(n != 0){
+				rem = n % 10;
+				rev = rev*10 + rem;
+				n  /= 10;
+			}
+			if(temp == rev) {
+				System.out.print("It is a palindrome ");
+			}else {
+				System.out.print("Not palindrome ");
+			}
+		} else if(n < 0) {
+			n = Math.abs(n);
+			int rev = 0, rem;
+			int temp = n;
+			
+			while(n != 0){
+				rem = n % 10;
+				rev = rev*10 + rem;
+				n  /= 10;
+			}
+			if(temp == rev) {
+				System.out.print("It is a palindrome ");
+			}else {
+				System.out.print("Not palindrome ");
+			}
+		}else if (n>=10 && n<=100) {
+			int first = n / 10;
+			int second = n % 10;
+			
+			if(first == second) {
+				System.out.print("It is a palindrome ");
+			}else {
+				System.out.print("Not palindrome ");
+			} 				
+	  } else {
+		  System.out.print("Invalid input");
+	  }
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a number -> ");
+		int n = sc.nextInt();
+		palindrome(n);
+	}
+
+}
