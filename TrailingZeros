@@ -1,0 +1,26 @@
+package dsaOne;
+import java.util.Scanner;
+public class TrailingZeros {
+
+	static int Zeros(int n) {
+		
+		if(n < 0) {
+			return -1;
+		}
+		
+		int count = 0;
+		for(int i = 5; i<=n; i *= 5 ) {
+			n /= i;
+			count = count + n;
+		}
+		return count;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter a number -> ");
+		int n = sc.nextInt();
+		System.out.print("Number of zeros is " + Zeros(n));
+	}
+
+}
